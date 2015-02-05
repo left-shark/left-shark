@@ -1,0 +1,66 @@
+body {
+    font-family: 'Helvetica', sans-serif;
+}
+
+#container {
+    padding: 20px;
+    border: 1px solid #eee;
+    margin: 20px auto;
+    width: 300px;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+#container p {
+    display: block;
+    margin: 0px auto 20px auto;
+    text-align: center;
+}
+
+#bookmarklet {
+    display: block;
+    font-weight: bold;
+    text-tranform: uppercase;
+    color: white;
+    background: #f36721;
+    text-align: left;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    border-bottom: 2px solid #a53d09;
+    text-shadow: 0 1px 1px #752b06;
+    font-size: 16px;
+    overflow: hidden;
+    cursor: move;
+    padding: 10px;
+    -webkit-user-select: none;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#bookmarklet:hover {
+    border-bottom: 2px solid #cc4b0b;
+    text-shadow: 0 1px 1px #a53d09;
+}
+
+#bookmarklet:active {
+    border-bottom: none;
+    border-top: 2px solid #bd460a;
+    text-shadow: 0 1px 1px #a53d09;
+}
+
+.powered {
+    font-size: 10px;
+    color: #ddd;
+    text-align: center;
+}
+
+.powered a {
+    color: #ddd;
+}
