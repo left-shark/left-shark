@@ -7,12 +7,12 @@
 
   var PATH_TO_VIDEO = "http://www.youtube.com/v/MAtCSio876c?version=3&autoplay=1&loop=1&playlist=MAtCSio876c";
 
-  var CSS_BASE_CLASS = "left-shark-start";
-  var CSS_SLOW_CLASS = "left-shark-slow";
-  var CSS_FIRST_CLASS = "im_first";
-  var CSS_OTHER_CLASSES = ["swirl", "macarena", "trippin", "ass-drop"];
+  // var CSS_BASE_CLASS = "left-shark-start";
+  // var CSS_SLOW_CLASS = "left-shark-slow";
+  // var CSS_FIRST_CLASS = "im_first";
+  // var CSS_OTHER_CLASSES = ["swirl", "macarena", "trippin", "ass-drop"];
 
-  var CSS_STROBE_CLASS = "strobe-light";
+  // var CSS_STROBE_CLASS = "strobe-light";
 
   var PATH_TO_CSS = "//cdn.rawgit.com/left-shark/left-shark/master/css/leftShark.css";
   var FILE_ADDED_CLASS = "added-css";
@@ -27,22 +27,22 @@
     document.body.appendChild(css);
   }
 
-  function removeAddedFiles() {
-    var addedFiles = document.getElementsByClassName(FILE_ADDED_CLASS);
-    for (var i=0; i<addedFiles.length; i++) {
-      document.body.removeChild(addedFiles[i]);
-    }
-  }
+  // function removeAddedFiles() {
+  //   var addedFiles = document.getElementsByClassName(FILE_ADDED_CLASS);
+  //   for (var i=0; i<addedFiles.length; i++) {
+  //     document.body.removeChild(addedFiles[i]);
+  //   }
+  // }
 
-  function flashScreen() {
-    var flash = document.createElement("div");
-    flash.setAttribute("class", CSS_STROBE_CLASS);
-    document.body.appendChild(flash);
+  // function flashScreen() {
+  //   var flash = document.createElement("div");
+  //   flash.setAttribute("class", CSS_STROBE_CLASS);
+  //   document.body.appendChild(flash);
 
-    setTimeout(function() {
-      document.body.removeChild(flash);
-    }, 100);
-  }
+  //   setTimeout(function() {
+  //     document.body.removeChild(flash);
+  //   }, 100);
+  // }
 
   function size(node) {
     return {
@@ -104,28 +104,28 @@
     document.body.appendChild(video);
   }
 
-  function firstDance(node) {
-    node.className += " "+CSS_BASE_CLASS+" "+CSS_FIRST_CLASS;
-  }
-  function othersDance(node) {
-    node.className += " "+CSS_BASE_CLASS+" "+CSS_OTHER_CLASSES[Math.floor(Math.random()*CSS_OTHER_CLASSES.length)];
-  }
+  // function firstDance(node) {
+  //   node.className += " "+CSS_BASE_CLASS+" "+CSS_FIRST_CLASS;
+  // }
+  // function othersDance(node) {
+  //   node.className += " "+CSS_BASE_CLASS+" "+CSS_OTHER_CLASSES[Math.floor(Math.random()*CSS_OTHER_CLASSES.length)];
+  // }
 
-  function allSlowDance() {
-    var shakingNodes = document.getElementsByClassName(CSS_BASE_CLASS);
-    for (var i=0; i<shakingNodes.length; ) {
-      shakingNodes[i].className = shakingNodes[i].className.replace(CSS_BASE_CLASS, CSS_SLOW_CLASS);
-    }
-    CSS_BASE_CLASS = CSS_SLOW_CLASS;
-  }
+  // function allSlowDance() {
+  //   var shakingNodes = document.getElementsByClassName(CSS_BASE_CLASS);
+  //   for (var i=0; i<shakingNodes.length; ) {
+  //     shakingNodes[i].className = shakingNodes[i].className.replace(CSS_BASE_CLASS, CSS_SLOW_CLASS);
+  //   }
+  //   CSS_BASE_CLASS = CSS_SLOW_CLASS;
+  // }
 
-  function allStopDancing() {
-    var shakingNodes = document.getElementsByClassName(CSS_BASE_CLASS);
-    var regex = new RegExp('\\b'+CSS_BASE_CLASS+'\\b');
-    for (var i=0; i<shakingNodes.length; ) {
-      shakingNodes[i].className = shakingNodes[i].className.replace(regex, "");
-    }
-  }
+  // function allStopDancing() {
+  //   var shakingNodes = document.getElementsByClassName(CSS_BASE_CLASS);
+  //   var regex = new RegExp('\\b'+CSS_BASE_CLASS+'\\b');
+  //   for (var i=0; i<shakingNodes.length; ) {
+  //     shakingNodes[i].className = shakingNodes[i].className.replace(regex, "");
+  //   }
+  // }
 
   // get first item
   var allNodes = document.getElementsByTagName("*"), len = allNodes.length, i, thisNode;
@@ -141,7 +141,7 @@
   }
 
   if (thisNode === null) {
-    console.warn("Could not find a node of the right size. Please try a different page.");
+    alert("Could not find a node of the right size. Please try a different page.");
     return;
   }
 
