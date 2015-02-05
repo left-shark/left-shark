@@ -60,6 +60,18 @@ html, body {
   z-index: 99999;
 }
 
+.palm {
+  position: fixed;
+  bottom: 0;
+  transform: translateY(100%);
+  right: 0;
+  max-height: 100%;
+  z-index: 99999;
+  -webkit-transition: all 4s ease-in-out;
+  -moz-transition: all 4s ease-in-out;
+  -o-transition: all 4s ease-in-out;
+  transition: all 4s ease-in-out;
+}
 
 
 
