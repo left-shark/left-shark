@@ -15,12 +15,12 @@
   (function playVideo() {
     var video = document.createElement("iframe");
     video.setAttribute("class", "left-shark-video");
-    setTimeout(function moveVideo() {
+    (function moveVideo() {
       var x = ~~((window.innerWidth - 400)*Math.random());
       var y = ~~((window.innerHeight - 400)*Math.random());
       video.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
       setTimeout(moveVideo, 4000);
-    }, 100);
+    }());
     video.src = PATH_TO_VIDEO;
     video.height = 400;
     video.width = 400;
@@ -28,12 +28,26 @@
     document.body.appendChild(video);
   }());
 
-  (function injectShark() {
+  function injectShark() {
     var img = document.createElement("img");
+    img.setAttribute("class", "left-shark-gif");
     img.src = "http://localhost:1337/assets/left-shark.gif";
+    (function moveShark() {
+      var x = ~~((window.innerWidth - 400)*Math.random());
+      var y = ~~((window.innerHeight - 400)*Math.random());
+      var z = ~~(Math.random()*500);
+      var scale = Math.random();
+      img.style.transform = "scale(" + scale + ") translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px)";
+      setTimeout(moveShark, 4000);
+    }());
     img.style.position = "fixed";
     document.body.appendChild(img);
-  }());
+  }
+
+  var i = 10;
+  while (i--) {
+    injectShark();
+  }
 
   return true;
 })();
