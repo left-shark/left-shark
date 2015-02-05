@@ -46,11 +46,21 @@ html, body {
 
 .waves {
   position: fixed;
-  bottom: 0;
+  bottom: 100px;
   left: 0;
+  transform: translateY(100%);
+  z-index: 999999;
 /*  -webkit-animation: wave-movement 10s infinite;
   -moz-animation: wave-movement 10s infinite;
   animation: wave-movement 10s infinite;*/
+}
+
+.fin {
+  position: fixed;
+  bottom: 50px;
+  right: 0;
+  height: 100px;
+  z-index: 99999;
 }
 
 /*@-webkit-keyframes wave-movement {
