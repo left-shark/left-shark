@@ -57,7 +57,6 @@
     var img = document.createElement("img");
     // img.setAttribute("class", "waves wobble animated infinite");
     img.setAttribute("class", "waves");
-
     img.src = "http://www.skylinesup.com/assets/images/_bgs/xbg_waves.png.pagespeed.ic.pGjXSUvPiA.png";
     document.body.appendChild(img);
   }());
@@ -67,6 +66,12 @@
     img.setAttribute("class", "fin");
     img.src = "http://images.clipartpanda.com/fin-clipart-blue-fin.svg";
     document.body.appendChild(img);
+    var x = 0;
+    requestAnimationFrame(function loop() {
+      if (x > window.innerWidth) x = 0;
+      img.style.transform = 'translateX(-' + (x++) + 'px)';
+      requestAnimationFrame(loop);
+    });
   }());
 
   return true;
