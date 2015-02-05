@@ -15,10 +15,10 @@
     var element = allElements[i];
 
     setTimeout(function(element) {
-      element.classList.add("wobble");
-      element.classList.add("left-shark-start");
-      element.classList.add("left-shark-slow");
-    }.bind(null, element), 100 + Math.random()*1000);
+      element.setAttribute("class", "animated inifinite swing");
+      element.style.WebkitAnimationDuration = "5s";
+      element.style.animationDuration = "5s";
+    }.bind(null, element), Math.random()*1000);
   }
 
   return true;
