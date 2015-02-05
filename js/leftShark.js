@@ -15,19 +15,6 @@
   // var CSS_STROBE_CLASS = "strobe-light";
 
   // var PATH_TO_CSS = "//cdn.rawgit.com/left-shark/left-shark/master/css/leftShark.css";
-  var PATH_TO_CSS = "../css/leftShark.css";
-
-  var FILE_ADDED_CLASS = "added-css";
-
-  function addCSS() {
-    var css = document.createElement("link");
-    css.setAttribute("type", "text/css");
-    css.setAttribute("rel", "stylesheet");
-    css.setAttribute("href", PATH_TO_CSS);
-    css.setAttribute("class", FILE_ADDED_CLASS);
-
-    document.body.appendChild(css);
-  }
 
   // function removeAddedFiles() {
   //   var addedFiles = document.getElementsByClassName(FILE_ADDED_CLASS);
@@ -146,9 +133,6 @@
     alert("Could not find a node of the right size. Please try a different page.");
     return;
   }
-
-  // insert CSS
-  addCSS();
 
   // play song
   playVideo();
