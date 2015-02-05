@@ -28,5 +28,12 @@
     document.body.appendChild(video);
   }());
 
+  (function injectShark() {
+    var img = document.createElement("img");
+    img.src = "http://localhost:1337/assets/left-shark.gif";
+    img.style.position = "fixed";
+    document.body.appendChild(img);
+  }());
+
   return true;
 })();
