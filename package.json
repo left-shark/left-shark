@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "uglifyjs index.js > left-shark.min.js"
+    "build": "uglifyjs js/leftShark.js > js/leftShark.min.js"
   },
   "repository": {
     "type": "git",
