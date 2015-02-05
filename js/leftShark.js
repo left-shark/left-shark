@@ -33,11 +33,10 @@
     img.setAttribute("class", "left-shark-gif");
     img.src = "http://localhost:1337/assets/left-shark.gif";
     (function moveShark() {
-      var x = ~~((window.innerWidth - 400)*Math.random());
-      var y = ~~((window.innerHeight - 400)*Math.random());
-      var z = ~~(Math.random()*500);
-      var scale = Math.random();
-      img.style.transform = "scale(" + scale + ") translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px)";
+      var x = ~~((window.innerWidth)*Math.random());
+      var y = ~~((window.innerHeight)*Math.random());
+      var z = -~~(Math.random()*500);
+      img.style.transform = "translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px)";
       setTimeout(moveShark, 4000);
     }());
     img.style.position = "fixed";
@@ -46,7 +45,7 @@
 
   var i = 10;
   while (i--) {
-    injectShark();
+    setTimeout(injectShark, i*100);
   }
 
   return true;

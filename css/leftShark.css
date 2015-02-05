@@ -36,6 +36,7 @@ html, body {
 .left-shark-gif {
   position: fixed;
   top: 0;
+  width: 70px;
   left: 0;
   -webkit-transition: all 4s ease-in-out;
   -moz-transition: all 4s ease-in-out;
