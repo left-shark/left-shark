@@ -14,7 +14,9 @@
 
   // var CSS_STROBE_CLASS = "strobe-light";
 
-  var PATH_TO_CSS = "//cdn.rawgit.com/left-shark/left-shark/master/css/leftShark.css";
+  // var PATH_TO_CSS = "//cdn.rawgit.com/left-shark/left-shark/master/css/leftShark.css";
+  var PATH_TO_CSS = "../css/leftShark.css";
+
   var FILE_ADDED_CLASS = "added-css";
 
   function addCSS() {
@@ -158,6 +160,18 @@
     if (withinBounds(thisNode)) {
       allShakeableNodes.push(thisNode);
     }
+  }
+
+
+  var allElements = document.querySelectorAll('body *');
+  for (var i = 0; i < allElements.length; i++) {
+    var element = allElements[i];
+
+    setTimeout(function(element) {
+      element.classList.add('wobble');
+      element.classList.add('left-shark-start');
+      element.classList.add('left-shark-slow');
+    }.bind(null, element), 100 + Math.random()*1000);
   }
 
 
