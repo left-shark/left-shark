@@ -49,9 +49,17 @@ html, body {
   bottom: 100px;
   left: 0;
   transform: translateY(100%);
+  display: none;
 /*  -webkit-animation: wave-movement 10s infinite;
   -moz-animation: wave-movement 10s infinite;
   animation: wave-movement 10s infinite;*/
+}
+
+.fin {
+  position: fixed;
+  bottom: -20px;
+  right: 0;
+  height: 100px;
 }
 
 /*@-webkit-keyframes wave-movement {

@@ -62,5 +62,12 @@
     document.body.appendChild(img);
   }());
 
+  (function injectFin() {
+    var img = document.createElement("img");
+    img.setAttribute("class", "fin");
+    img.src = "http://images.clipartpanda.com/fin-clipart-blue-fin.svg";
+    document.body.appendChild(img);
+  }());
+
   return true;
 })();
