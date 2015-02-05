@@ -7,15 +7,15 @@
 
   var PATH_TO_VIDEO = "//www.youtube.com/embed/MAtCSio876c";
 
-  var CSS_BASE_CLASS = "mw-harlem_shake_me";
-  var CSS_SLOW_CLASS = "mw-harlem_shake_slow";
+  var CSS_BASE_CLASS = "left-shark-start";
+  var CSS_SLOW_CLASS = "left-shark-slow";
   var CSS_FIRST_CLASS = "im_first";
-  var CSS_OTHER_CLASSES = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+  var CSS_OTHER_CLASSES = ["swirl", "macarena", "trippin", "ass-drop"];
 
-  var CSS_STROBE_CLASS = "mw-strobe_light";
+  var CSS_STROBE_CLASS = "strobe-light";
 
   var PATH_TO_CSS = "???";
-  var FILE_ADDED_CLASS = "mw_added_css";
+  var FILE_ADDED_CLASS = "added-css";
 
   function addCSS() {
     var css = document.createElement("link");
@@ -112,28 +112,28 @@
       // song started, start shaking first item
       if(time >= 0.5 && !harlem) {
         harlem = true;
-        shakeFirst(firstNode);
+        firstDance(firstNode);
       }
 
       // everyone else joins the party
       if(time >= 15.5 && !shake) {
         shake = true;
-        stopShakeAll();
+        allStopDancing();
         flashScreen();
         for (i = 0; i < len; i++) {
-          shakeOther(nodes[i]);
+          othersDance(nodes[i]);
         }
       }
 
       // slow motion at the end
       if(audioTag.currentTime >= 28.4 && !slowmo) {
         slowmo = true;
-        shakeSlowAll();
+        allSlowDance();
       }
     }, true);
 
     audioTag.addEventListener("ended", function() {
-      stopShakeAll();
+      allStopDancing();
       removeAddedFiles();
     }, true);
 
@@ -143,14 +143,14 @@
     audioTag.play();
   }
 
-  function shakeFirst(node) {
+  function firstDance(node) {
     node.className += " "+CSS_BASE_CLASS+" "+CSS_FIRST_CLASS;
   }
-  function shakeOther(node) {
+  function othersDance(node) {
     node.className += " "+CSS_BASE_CLASS+" "+CSS_OTHER_CLASSES[Math.floor(Math.random()*CSS_OTHER_CLASSES.length)];
   }
 
-  function shakeSlowAll() {
+  function allSlowDance() {
     var shakingNodes = document.getElementsByClassName(CSS_BASE_CLASS);
     for (var i=0; i<shakingNodes.length; ) {
       shakingNodes[i].className = shakingNodes[i].className.replace(CSS_BASE_CLASS, CSS_SLOW_CLASS);
@@ -158,7 +158,7 @@
     CSS_BASE_CLASS = CSS_SLOW_CLASS;
   }
 
-  function stopShakeAll() {
+  function allStopDancing() {
     var shakingNodes = document.getElementsByClassName(CSS_BASE_CLASS);
     var regex = new RegExp('\\b'+CSS_BASE_CLASS+'\\b');
     for (var i=0; i<shakingNodes.length; ) {
