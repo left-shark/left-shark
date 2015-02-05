@@ -5,6 +5,8 @@
   var MAX_HEIGHT = 350;
   var MAX_WIDTH = 350;
 
+  var PATH_TO_VIDEO = "http://www.youtube.com/v/MAtCSio876c?version=3&autoplay=1&loop=1&playlist=MAtCSio876c";
+
   var CSS_BASE_CLASS = "left-shark-start";
   var CSS_SLOW_CLASS = "left-shark-slow";
   var CSS_FIRST_CLASS = "im_first";
@@ -12,7 +14,7 @@
 
   var CSS_STROBE_CLASS = "strobe-light";
 
-  var PATH_TO_CSS = "//raw.githubusercontent.com/left-shark/left-shark/master/css/leftShark.css";
+  var PATH_TO_CSS = "//cdn.rawgit.com/left-shark/left-shark/master/css/leftShark.css";
   var FILE_ADDED_CLASS = "added-css";
 
   function addCSS() {
@@ -92,43 +94,14 @@
     return (y >= st && y <= (vpH + st));
   }
 
-  function playSong() {
-    var container = document.createElement('div');
-    container.innerHTML = '<div style="opacity: 0;"><iframe src="https://youtube.com/embed/MAtCSio876c?autoplay=1&controls=0&showinfo=0&autohide=1"></iframe></div>';
-    document.body.appendChild(container);
-    container.setAttribute("class", FILE_ADDED_CLASS);
-
-
-
-
-    // var harlem = false,
-    //     shake = false,
-    //     slowmo = false;
-
-    // container.addEventListener("timeupdate", function() {
-    //     var nodes = allShakeableNodes,
-    //         len = nodes.length, i;
-
-    //     harlem = true;
-    //     firstDance(firstNode);
-
-    //     allStopDancing();
-    //     flashScreen();
-    //     for (i = 0; i < len; i++) {
-    //       othersDance(nodes[i]);
-    //     }
-
-    //     slowmo = true;
-    //     allSlowDance();
-
-    //     allStopDancing();
-    //     removeAddedFiles();
-    // }, true);
-
-    // audioTag.innerHTML = "<p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p>";
-
-    // document.body.appendChild(audioTag);
-    // audioTag.play();
+  function playVideo() {
+    var video = document.createElement("iframe");
+    // video.setAttribute("class", FILE_ADDED_CLASS);
+    video.src = PATH_TO_VIDEO;
+    video.height = 400;
+    video.width = 400;
+    video.autoplay = true;
+    document.body.appendChild(video);
   }
 
   function firstDance(node) {
@@ -176,7 +149,7 @@
   addCSS();
 
   // play song
-  playSong();
+  playVideo();
 
   var allShakeableNodes = [];
 
