@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "uglifyjs js/leftShark.js > js/leftShark.min.js",
     "start-dev": "st --no-cache"
   },
   "repository": {
@@ -18,9 +17,6 @@
     "url": "https://github.com/left-shark/left-shark/issues"
   },
   "homepage": "https://github.com/left-shark/left-shark",
-  "dependencies": {
-    "uglify-js": "^2.4.16"
-  },
   "devDependencies": {
     "st": "^0.5.2"
   }
