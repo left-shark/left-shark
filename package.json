@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "uglifyjs index.js > left-shark.min.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/left-shark/left-shark/issues"
   },
-  "homepage": "https://github.com/left-shark/left-shark"
+  "homepage": "https://github.com/left-shark/left-shark",
+  "dependencies": {
+    "uglify-js": "^2.4.16"
+  }
 }

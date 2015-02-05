@@ -3,14 +3,12 @@
     var allElements = document.querySelectorAll('*');
 
     requestAnimationFrame(function loop(t) {
-        // var alpha = (t%1000)/1000;
         var alpha = 1;
-
         document.body.style.background = 'rgba(189, 239, 255, ' + alpha + ')';
 
-        wave1.style.transform = 'translateX(' + t%1000 + 'px)';
-        wave2.style.transform = 'translateX(' + t%2000 + 'px)';
-        wave2.style.transform = 'translateX(' + -t%3000 + 'px)';
+        wave1.style.left = 100 + 'px';
+        wave2.style.right = 200 + 'px';
+        wave2.style.left = 300 + 'px';
 
         requestAnimationFrame(loop);
     });
@@ -39,7 +37,6 @@
         "  bottom:0;" +
         "  left:-20%;" +
         "  z-index:1;" +
-        "  " +
         "  -ms-animation: background 3s infinite alternate;" +
         "    -moz-animation: background 3s infinite alternate;" +
         "    -webkit-animation: background 3s infinite alternate;" +
@@ -60,8 +57,7 @@
         "    900px 0 0 0 #BFEFFF," +
         "    1200px 0 0 0 #BFEFFF," +
         "    1500px 0 0 0 #BFEFFF," +
-        "    1800px 0 0 0 #BFEFFF" +
-        "    ;" +
+        "    1800px 0 0 0 #BFEFFF;" +
         "}" +
         ".wave2{" +
         "  background:#1D9AB3;" +
@@ -71,7 +67,6 @@
         "  bottom:0;" +
         "  left:-20%;" +
         "  z-index:10;" +
-        "  " +
         "  -ms-animation: middle 2s infinite alternate;" +
         "    -moz-animation: middle 2s infinite alternate;" +
         "    -webkit-animation: middle 2s infinite alternate;" +
@@ -96,8 +91,7 @@
         "    1200px 0 0 0 #177b8f," +
         "    1400px 0 0 0 #177b8f," +
         "    1600px 0 0 0 #177b8f," +
-        "    1800px 0 0 0 #177b8f" +
-        "    ;" +
+        "    1800px 0 0 0 #177b8f;" +
         "}" +
         ".wave3{" +
         "  background:#4aaec2;" +
@@ -107,7 +101,6 @@
         "  left:-20%;" +
         "  position:absolute;" +
         "  z-index:11;" +
-        "  " +
         "  -ms-animation: first 1.5s infinite alternate;" +
         "    -moz-animation: first 1.5s infinite alternate;" +
         "    -webkit-animation: first 1.5s infinite alternate;" +
@@ -136,25 +129,16 @@
         "    1500px 0 0 0 #1D9AB3," +
         "    1650px 0 0 0 #1D9AB3," +
         "    1800px 0 0 0 #1D9AB3," +
-        "    1950px 0 0 0 #1D9AB3" +
-        "    ;" +
+        "    1950px 0 0 0 #1D9AB3;" +
         "}";
-
         tag.appendChild(document.createTextNode(tag.cssText));
         document.head.appendChild(tag);
     }());
 
 
 
-
-
-    var html = ('<div style="opacity: 0;">' +
-        '<iframe src="https://youtube.com/embed/MAtCSio876c?autoplay=1&controls=0&showinfo=0&autohide=1">' +
-        '</iframe>' +
-    '</div>');
-
     var container = document.createElement('div');
-    container.innerHTML = html;
+    container.innerHTML = '<div style="opacity: 0;"><iframe src="https://youtube.com/embed/MAtCSio876c?autoplay=1&controls=0&showinfo=0&autohide=1"></iframe></div>';
     document.body.appendChild(container);
 
     return true;
