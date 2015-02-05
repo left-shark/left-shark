@@ -1,4 +1,6 @@
 (function() {
+  document.body.style.margin = "0";
+
   var PATH_TO_VIDEO = "http://www.youtube.com/v/MAtCSio876c?version=3&autoplay=1&loop=1&playlist=MAtCSio876c";
 
   var allElements = document.querySelectorAll("body *");
@@ -6,7 +8,7 @@
     var element = allElements[i];
 
     setTimeout(function(element) {
-      element.setAttribute("class", "animated inifinite swing");
+      element.setAttribute("class", "animated infinite swing");
       element.style.WebkitAnimationDuration = "5s";
       element.style.animationDuration = "5s";
     }.bind(null, element), Math.random()*1000);
@@ -37,9 +39,10 @@
       var y = ~~((window.innerHeight)*Math.random());
       var z = -~~(Math.random()*500);
       img.style.transform = "translateX(" + x + "px) translateY(" + y + "px) translateZ(" + z + "px)";
+      img.style.WebkitAnimationDuration = "5s";
+      img.style.animationDuration = "5s";
       setTimeout(moveShark, 4000);
     }());
-    img.style.position = "fixed";
     document.body.appendChild(img);
   }
 
@@ -47,6 +50,14 @@
   while (i--) {
     setTimeout(injectShark, i*100);
   }
+
+
+  (function injectWaves() {
+    var img = document.createElement("img");
+    img.setAttribute("class", "waves wobble animated infinite");
+    img.src = "http://www.skylinesup.com/assets/images/_bgs/xbg_waves.png.pagespeed.ic.pGjXSUvPiA.png";
+    document.body.appendChild(img);
+  }());
 
   return true;
 })();

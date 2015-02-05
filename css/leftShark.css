@@ -44,8 +44,33 @@ html, body {
   transition: all 4s ease-in-out;
 }
 
+.waves {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+/*  -webkit-animation: wave-movement 10s infinite;
+  -moz-animation: wave-movement 10s infinite;
+  animation: wave-movement 10s infinite;*/
+}
 
+/*@-webkit-keyframes wave-movement {
+  0% { background: blue; }
+  50% { background: lightblue; }
+  100% { background: blue; }
+}
 
+@-moz-keyframes wave-movement {
+  0% { background: blue; }
+  50% { background: lightblue; }
+  100% { background: blue; }
+}
+
+@keyframes wave-movement {
+  0% { background: blue; }
+  50% { background: lightblue; }
+  100% { background: blue; }
+}
+*/
 
 
 
