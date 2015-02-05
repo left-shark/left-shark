@@ -14,7 +14,7 @@
 
   var CSS_STROBE_CLASS = "strobe-light";
 
-  var PATH_TO_CSS = "???";
+  var PATH_TO_CSS = "//raw.githubusercontent.com/left-shark/left-shark/master/css/leftShark.css";
   var FILE_ADDED_CLASS = "added-css";
 
   function addCSS() {
