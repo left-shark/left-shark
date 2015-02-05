@@ -60,6 +60,7 @@ html, body {
   bottom: -20px;
   right: 0;
   height: 100px;
+  z-index: 999999999;
 }
 
 /*@-webkit-keyframes wave-movement {
