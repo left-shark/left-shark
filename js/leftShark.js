@@ -5,7 +5,7 @@
   var MAX_HEIGHT = 350;
   var MAX_WIDTH = 350;
 
-  var PATH_TO_VIDEO = "//www.youtube.com/embed/MAtCSio876c";
+  var PATH_TO_VIDEO = "http://www.youtube.com/v/MAtCSio876c?version=3&autoplay=1&loop=1&playlist=MAtCSio876c";
 
   var CSS_BASE_CLASS = "left-shark-start";
   var CSS_SLOW_CLASS = "left-shark-slow";
@@ -14,7 +14,7 @@
 
   var CSS_STROBE_CLASS = "strobe-light";
 
-  var PATH_TO_CSS = "//raw.githubusercontent.com/left-shark/left-shark/master/css/leftShark.css";
+  var PATH_TO_CSS = "//cdn.rawgit.com/left-shark/left-shark/master/css/leftShark.css";
   var FILE_ADDED_CLASS = "added-css";
 
   function addCSS() {
@@ -94,53 +94,14 @@
     return (y >= st && y <= (vpH + st));
   }
 
-  function playSong() {
-    var audioTag = document.createElement("audio");
-    audioTag.setAttribute("class", FILE_ADDED_CLASS);
-    audioTag.src = PATH_TO_VIDEO;
-    audioTag.loop = false;
-
-    var harlem = false,
-        shake = false,
-        slowmo = false;
-
-    audioTag.addEventListener("timeupdate", function() {
-      var time = audioTag.currentTime,
-          nodes = allShakeableNodes,
-          len = nodes.length, i;
-
-      // song started, start shaking first item
-      if(time >= 0.5 && !harlem) {
-        harlem = true;
-        firstDance(firstNode);
-      }
-
-      // everyone else joins the party
-      if(time >= 15.5 && !shake) {
-        shake = true;
-        allStopDancing();
-        flashScreen();
-        for (i = 0; i < len; i++) {
-          othersDance(nodes[i]);
-        }
-      }
-
-      // slow motion at the end
-      if(audioTag.currentTime >= 28.4 && !slowmo) {
-        slowmo = true;
-        allSlowDance();
-      }
-    }, true);
-
-    audioTag.addEventListener("ended", function() {
-      allStopDancing();
-      removeAddedFiles();
-    }, true);
-
-    audioTag.innerHTML = "<p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p>";
-
-    document.body.appendChild(audioTag);
-    audioTag.play();
+  function playVideo() {
+    var video = document.createElement("iframe");
+    // video.setAttribute("class", FILE_ADDED_CLASS);
+    video.src = PATH_TO_VIDEO;
+    video.height = 400;
+    video.width = 400;
+    video.autoplay = true;
+    document.body.appendChild(video);
   }
 
   function firstDance(node) {
@@ -188,7 +149,7 @@
   addCSS();
 
   // play song
-  playSong();
+  playVideo();
 
   var allShakeableNodes = [];
 
