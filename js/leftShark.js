@@ -35,7 +35,7 @@
   function injectShark() {
     var img = document.createElement("img");
     img.setAttribute("class", "left-shark-gif");
-    img.src = "http://localhost:1337/assets/left-shark.gif";
+    img.src = "http://i.imgur.com/c9AnBzU.gif";
     (function moveShark() {
       var x = ~~((window.innerWidth)*Math.random());
       var y = ~~((window.innerHeight)*Math.random());
