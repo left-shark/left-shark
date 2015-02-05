@@ -53,7 +53,7 @@
   }
 
 
-  (function injectWaves() {
+  (function injectWave() {
     var img = document.createElement("img");
     // img.setAttribute("class", "waves wobble animated infinite");
     img.setAttribute("class", "waves");
@@ -72,6 +72,25 @@
       img.style.transform = 'translateX(-' + (x++) + 'px)';
       requestAnimationFrame(loop);
     });
+  }());
+
+  (function injectPalm() {
+    var img = document.createElement("img");
+    img.setAttribute("class", "palm");
+    img.src = "http://www.dzzyn.com/wp-content/uploads/2015/01/20-Free-Tree-PNG-Images-jamaicanroyalpalm01L.png";
+    document.body.appendChild(img);
+    img.onload = function() {
+      setTimeout(function() {
+        img.style.transform = 'translateY(0)';
+      }, 10);
+    };
+    // var x = 0;
+    // requestAnimationFrame(function loop() {
+    //   if (x > window.innerWidth) x = 0;
+    //   img.style.transform = 'translateX(-' + (x++) + 'px)';
+    //   requestAnimationFrame(loop);
+    // });
+
   }());
 
   return true;
