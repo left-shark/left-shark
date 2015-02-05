@@ -1,3 +1,31 @@
+body {
+  -webkit-animation: color-fade 10s infinite;
+  -moz-animation: color-fade 10s infinite;
+  animation: color-fade 10s infinite;
+}
+
+@-webkit-keyframes color-fade {
+  0% { background: blue; }
+  50% { background: lightblue; }
+  100% { background: blue; }
+}
+
+@-moz-keyframes color-fade {
+  0% { background: blue; }
+  50% { background: lightblue; }
+  100% { background: blue; }
+}
+
+@keyframes color-fade {
+  0% { background: blue; }
+  50% { background: lightblue; }
+  100% { background: blue; }
+}
+
+
+
+
+
 .strobe-light {
   position: fixed;
   width: 100%;
