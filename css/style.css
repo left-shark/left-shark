@@ -15,6 +15,11 @@ html {
             transition: .2s ease;
 }
 
+.credits a, .wtf {
+    color: #3487f7;
+    font-style: italic;
+}
+
 .social {
     border-bottom: 1px solid #eee;
     padding: 20px;
@@ -23,11 +28,6 @@ html {
 .social-link {
     float: right;
     margin-left: 20px;
-}
-
-.wtf {
-    color: #999;
-    font-style: italic;
 }
 
 .card {
@@ -113,9 +113,10 @@ h2 small {
 .blur {
   -webkit-filter: blur(5px);
   -moz-filter: blur(5px);
-  -o-filter: blur(5px);
   -ms-filter: blur(5px);
-  filter: blur(5px);
+  filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feGaussianBlur stdDeviation="5" /></filter></svg>#filter');
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 
 .modal-wrapper {
@@ -126,15 +127,15 @@ h2 small {
     background:rgba(255,257,153,0.75);
     visibility:hidden;
     opacity:0;
+    filter: alpha(opacity=0);
     -webkit-transition: all 0.25s ease-in-out;
-    -moz-transition: all 0.25s ease-in-out;
-    -o-transition: all 0.25s ease-in-out;
     transition: all 0.25s ease-in-out;
     z-index: 999;
 }
 
 .modal-wrapper.open{
     opacity: 1;
+    filter: alpha(opacity=100);
     visibility: visible;
 }
 
@@ -147,15 +148,15 @@ h2 small {
     top:50%; left:50%;
     background:#fff;
     opacity:0;
+    filter: alpha(opacity=0);
     -webkit-transition: all 0.5s ease-in-out;
-    -moz-transition: all 0.5s ease-in-out;
-    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
 }
 
 .modal-wrapper.open .modal{
     margin-top:-200px;
     opacity:1;
+    filter: alpha(opacity=100);
 }
 
 .head{
@@ -173,7 +174,7 @@ h2 small {
     float:right;
 }
 
-.btn-close::before, .btn-close::after{
+.btn-close:before, .btn-close:after{
   content:'';
   width:32px;
   height:6px;
@@ -181,22 +182,31 @@ h2 small {
   background:white;
 }
 
-.btn-close::before{
+.btn-close:before{
   margin-top:12px;
   -webkit-transform:rotate(45deg);
-  -moz-transform:rotate(45deg);
-  -o-transform:rotate(45deg);
-  transform:rotate(45deg);
+  -ms-transform:rotate(45deg);
+      transform:rotate(45deg);
 }
 
-.btn-close::after{
+.btn-close:after{
   margin-top:-6px;
   -webkit-transform:rotate(-45deg);
-  -moz-transform:rotate(-45deg);
-  -o-transform:rotate(-45deg);
-  transform:rotate(-45deg);
+  -ms-transform:rotate(-45deg);
+      transform:rotate(-45deg);
 }
 
 .content{
   padding:5%;
+}
+
+.credits {
+    display: inline;
+    position: absolute;
+    bottom: 0;
+    right: 20px;
+    padding: 20px;
+    margin: 0;
+    color: #999;
+    font-style: italic;
 }
