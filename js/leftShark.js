@@ -20,7 +20,8 @@
     (function moveVideo() {
       var x = ~~((window.innerWidth - 400)*Math.random());
       var y = ~~((window.innerHeight - 400)*Math.random());
-      video.style.transform = "translateX(" + x + "px) translateY(" + y + "px)";
+      var scale = Math.random();
+      video.style.transform = "translateX(" + x + "px) translateY(" + y + "px) scale(" + scale + ")";
       setTimeout(moveVideo, 4000);
     }());
     video.src = PATH_TO_VIDEO;
@@ -54,7 +55,9 @@
 
   (function injectWaves() {
     var img = document.createElement("img");
-    img.setAttribute("class", "waves wobble animated infinite");
+    // img.setAttribute("class", "waves wobble animated infinite");
+    img.setAttribute("class", "waves");
+
     img.src = "http://www.skylinesup.com/assets/images/_bgs/xbg_waves.png.pagespeed.ic.pGjXSUvPiA.png";
     document.body.appendChild(img);
   }());

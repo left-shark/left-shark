@@ -46,8 +46,9 @@ html, body {
 
 .waves {
   position: fixed;
-  bottom: 0;
+  bottom: 100px;
   left: 0;
+  transform: translateY(100%);
 /*  -webkit-animation: wave-movement 10s infinite;
   -moz-animation: wave-movement 10s infinite;
   animation: wave-movement 10s infinite;*/
