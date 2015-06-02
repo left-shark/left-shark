@@ -1,7 +1,7 @@
 (function() {
   document.body.style.margin = "0";
 
-  var PATH_TO_VIDEO = "https://www.youtube.com/v/MAtCSio876c?version=3&autoplay=1&loop=1&playlist=MAtCSio876c";
+  var PATH_TO_VIDEO = "https://www.youtube.com/embed/WmcWZ2Bzoho?autoplay=1&loop=1";
 
   var allElements = document.querySelectorAll("body *");
   for (var i = 0; i < allElements.length; i++) {
